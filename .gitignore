@@ -44,9 +44,7 @@ tensorboard/
 .env.*
 *.secret
 
-## 数据目录（全部排除）
+## 数据目录（全部排除，但保留README.md）
 data/*
-
-## 如需保留示例/说明文件，可单独取消忽略，例如：
-# !data/README.md
+!data/README.md
 
