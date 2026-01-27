@@ -1,0 +1,52 @@
+## Python 通用忽略
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.Python
+env/
+venv/
+.venv/
+
+## IDE / 编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+## 日志与缓存
+# 忽略logs目录内的所有文件，但保留README.md
+logs/*
+!logs/README.md
+*.log
+*.tmp
+*.cache/
+
+## 检查点与模型文件
+# 忽略文件夹内的所有文件，但保留README.md说明文件
+models/checkpoints/*
+!models/checkpoints/README.md
+models/pretrained/*
+!models/pretrained/README.md
+
+## 结果与中间文件
+# 忽略文件夹内的所有文件，但保留README.md说明文件
+results/*
+!results/README.md
+tensorboard/
+
+## 环境与密钥
+.env
+.env.*
+*.secret
+
+## 数据目录（全部排除）
+data/*
+
+## 如需保留示例/说明文件，可单独取消忽略，例如：
+# !data/README.md
+

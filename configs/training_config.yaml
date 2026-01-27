@@ -1,0 +1,40 @@
+# configs/training_config.yaml
+# 数据路径
+train_jsonl: 'data/processed/train_expanded.jsonl'
+dev_jsonl: 'data/processed/dev_expanded.jsonl'
+test_jsonl: 'data/processed/test_expanded.jsonl'
+image_root: 'data/images'
+
+# 模型配置
+hidden_dim: 768
+proj_dim: 256
+num_queries: 8
+num_classes: 3
+freeze_bert_layers: 10
+use_lora: true
+lora_rank: 8
+
+# 损失权重
+alpha: 1.0          # InfoNCE
+beta: 0.5           # SupCon
+gamma: 0.3          # Auxiliary
+temperature_infonce: 0.07
+temperature_supcon: 0.1
+
+# 训练配置
+num_epochs: 15
+batch_size: 32
+num_workers: 4
+lr_backbone: 1.0e-5  # BERT和LoRA
+lr_head: 1.0e-4      # 新模块
+weight_decay: 0.01
+warmup_ratio: 0.1
+max_grad_norm: 1.0
+use_amp: true        # 混合精度训练
+
+# 保存配置
+save_dir: 'models/checkpoints'
+save_every: 5
+
+# 其他
+seed: 42
