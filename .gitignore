@@ -44,7 +44,18 @@ tensorboard/
 .env.*
 *.secret
 
-## 数据目录（全部排除，但保留README.md）
+## 数据目录（全部排除，但保留README.md和处理脚本）
 data/*
 !data/README.md
+# 保留所有 _Process 文件夹（数据处理脚本）
+!data/*_Process/
+!data/*_Process/**
+# 但忽略处理文件夹中的数据文件
+data/*_Process/*.jsonl
+data/*_Process/*.json
+data/*_Process/*.tsv
+data/*_Process/*.txt
+data/*_Process/*.jpg
+data/*_Process/*.png
+data/*_Process/twitter2015_images/
 

@@ -76,14 +76,7 @@ class MABSADataset(Dataset):
         image_path = f"{self.image_root}/{sample['image_paths'][0]}"
         try:
             image = Image.open(image_path).convert('RGB')
-            # 使用 PIL Image 直接处理，避免 NumPy 依赖问题
-            image_inputs = self.image_processor(
-                images=image, 
-                return_tensors='pt',
-                do_rescale=True,
-                do_normalize=True
-            )
-            image_tensor = image_inputs['pixel_values']
+            image_tensor = self.image_processor(image, return_tensors='pt')['pixel_values']
         except Exception as e:
             print(f"图像加载失败: {image_path}, 错误: {e}")
             # 使用黑色图像作为占位符
