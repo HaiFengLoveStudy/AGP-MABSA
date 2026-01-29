@@ -127,8 +127,8 @@ def main():
     script_dir = Path(__file__).parent
     data_dir = script_dir.parent  # data目录
     
-    # Twitter15数据路径
-    twitter15_dir = script_dir / 'twitter2015'
+    # Twitter15数据路径（修正：数据在 Twitter15 文件夹中）
+    twitter15_dir = data_dir / 'Twitter15' / 'twitter2015'
     
     # 创建输出目录结构
     print("=" * 60)
@@ -166,7 +166,8 @@ def main():
     print("步骤 3: 检查图像文件")
     print("=" * 60)
     
-    images_source = script_dir / 'twitter2015_images'
+    # 图像源路径（修正：图像在 Twitter15 文件夹中）
+    images_source = data_dir / 'Twitter15' / 'twitter2015_images'
     images_target = data_dir / 'images' / 'twitter2015_images'
     
     if images_source.exists():
