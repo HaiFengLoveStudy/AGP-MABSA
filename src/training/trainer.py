@@ -2,7 +2,7 @@
 import torch
 import torch.nn as nn
 from torch.optim import AdamW
-from torch.optim.lr_scheduler import get_linear_schedule_with_warmup
+from transformers import get_linear_schedule_with_warmup  # 修正：从 transformers 导入
 from torch.cuda.amp import autocast, GradScaler
 from tqdm import tqdm
 import numpy as np

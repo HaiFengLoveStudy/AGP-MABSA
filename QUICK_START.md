@@ -66,10 +66,10 @@ vim configs/training_config.yaml
 python train.py
 
 # 后台运行（推荐）
-nohup python train.py > logs/training.log 2>&1 &
+nohup python train.py > logs/training_202601290215.log 2>&1 &
 
 # 查看日志
-tail -f logs/training.log
+tail -f logs/training_202601290215.log
 ```
 
 **训练过程**:
